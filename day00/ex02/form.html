@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <script src="./popup.js"></script>
+</head>
+<body>
+    
+
+<form>
+<div class="form-name">
+    <label for="fname">Nome:</label><br>
+    <input type="text" id="firstname" name="firstname" value="John"><br>
+</div>
+<div class="form-lname">
+    <label for="lname">Sobrenome:</label><br>
+    <input type="text" id="name" name="name" value="Doe"><br><br>
+</div>
+<div class="form-idade">
+    <label for="quantity">Insira a sua idade:</label>
+    <input type="number" id="age" name="age" min="1" max="100">
+</div>   
+<div class="form-phone">
+    <label for="phone">Insira o seu numero de contato:</label><br><br>
+    <input type="tel" id="phone" name="phone" placeholder="55 11 94318-0073">
+</div>  
+<div class="form-email">
+    <label for="email">Insira seu e-mail mais lindo:</label>
+    <input type="email" id="email" name="email">
+</div>   
+<div class="form-checkbox">
+    <input type="checkbox" id="student" name="student" value="Bike">
+    <label for="vehicle1"> Voce e aluno da 42?</label><br>
+</div>  
+<div class="form-genero">
+    <p>Genero:
+        <label class="container" for="gender_female">Feminino
+            <input type="radio" name="gender" value="female" id="gender_female">
+            
+        </label>
+        <label class="container" for="gender_male">Masculino
+            <input type="radio" name="gender" value="male"id="gender_male">
+           
+        </label>
+        <label class="container" for="gender_other">Outros
+            <input type="radio" name="gender" value="other" id="gender_other">
+            
+        </label>
+    </p> 
+</div>    
+    <button onclick="displayFormContents()">OK</button>
+
+    
+</form> 
+
+
+</body>
+</html>
