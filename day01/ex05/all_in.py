@@ -15,40 +15,55 @@ def biblioteca() :
     "CO": "Denver"
     }
 
-      
-    if recebeArgumentos(capital_cities) == True:
-        cidade = trazendoEstado(capital_cities, sys.argv[1]).split()
-        estado = procurandoUF(states, cidade)
-        for estado in capital_cities:
-            if ',' in capital_cities or ' ' in capital_cities or "." in capital_cities :
-                print(estado[:-1])
-            else:
-                print(estado)
-    else:
-        print("Unknown capital city")
+    
+    
+    lst = recebeArgumentos()
+   
+    for i in range (len(lst)) :
 
-def procurandoUF(capital_cities, cidade): #Salem value
-            for k,v in capital_cities.items():
-                if cidade == v :
-                    return k
-     
-        
-        
-def trazendoEstado(states,estado):
-            for k,v in states.items():
-                if estado == v :
-                    return k
+        line1 = lst[i].title()
+        line2 = " ".join(line1.split())
+
+        b = procurandoCity(states, capital_cities, line2)
+        if not b :
+            b = procurandoEstado (states, capital_cities, line2)
+        if not b :
+            if not lst[i] == "" : # para todo espeaço que não for null, deve imprimir a msg. "entende que é null"
+                print(lst[i] + " is neither a capital city nor a state ")
+
+    
+
+def procurandoCity(states, capital_cities, city): #Salem value
+    for k,v in capital_cities.items():
+        if str(city) == str(v) :
+            for k2, v2 in states.items() :
+                if k == v2 :
+                    print( v + " is the capital of " + k2)
+                    return True
+    return False
+      
+def procurandoEstado(states, capital_cities, state): #devolve K
+    for k,v in states.items():
+        if state == k :
+            for k2, v2 in capital_cities.items() :
+                if k2 == v :
+                    print(v2 + " is the capital of " + k)
+                    return True
+    return False  
+            
+                  
 
             
-def recebeArgumentos(capital_cities):
-    valid = False
-   
+def recebeArgumentos():
     if len(sys.argv) != 2:
-        sys.exit()
-    for k, v in capital_cities.items():
-        if(sys.argv[1]) == v:
-            valid = True
-    return(valid)
+        sys.exit() 
+    lst = sys.argv[1].split(",")
+    for i in range (len(lst)) :
+        lst[i] = lst[i].strip()
+  #  for k, v in capital_cities.items():
+  #      if(sys.argv[1]) == v:
+  #          valid = True
+    return(lst)
 
 
 

@@ -21,7 +21,7 @@ def biblioteca(state) :
         print("Unknown state")
     else :
 
-        argumentoEstado= states[state] #OR value
+        argumentoEstado= states[state] #Oregon value
         
         argumentoCidade = capital_cities[argumentoEstado]
         print(argumentoCidade)
