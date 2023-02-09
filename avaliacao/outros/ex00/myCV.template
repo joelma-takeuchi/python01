@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{title}</title>
+	</head>
+	<body>
+		<h1>Who are you? {name}</h1>
+		<p>Your Surname? {surname}</p>
+		<p>Your age? {age}</p>
+		<p>Your profession? {profession}</p>
+	</body>
+</html>
